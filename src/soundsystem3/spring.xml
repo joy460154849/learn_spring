@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- bean id 默认是：soundsystem2.SgtPeppers#0 这里规定了Bean id :sgtPeppers  -->
+	<bean id="compactDisc" class="soundsystem3.BlankDisc">
+		<constructor-arg value="Sgt.Pepper's Lonely Hearts Club Band"></constructor-arg>
+		<constructor-arg value="The Beatles"></constructor-arg>
+		<constructor-arg>
+			<list>
+			<!-- value指定 列表的值 -->
+				<value>Sgt.Pepper's Lonely Hearts Club Band</value>
+				<value>With a Little Help from My Friends</value>
+			<!-- ref 指定bean id -->
+				<!-- <ref bean="sgtPetter"> -->
+			</list>
+		</constructor-arg>
+		<property name="title" value="Sgt.Pepper's Lonely Hearts Club Band"></property>
+		<property name="artist" value="With a Little Help from My Friends"></property>
+	</bean>
+	<!--constructor-arg：元素告诉spring要讲一个bean ID为compactDisc的bean引用传递到CDPlayer构造器中  -->
+	<bean id="cdPlayer" class="soundsystem3.CDPlayer">
+		<property name="cd" ref="compactDisc"></property>
+	</bean>
+	
+	
+</beans>

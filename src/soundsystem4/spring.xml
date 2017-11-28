@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- bean id 默认是：soundsystem2.SgtPeppers#0 这里规定了Bean id :sgtPeppers  -->
+	<bean id="compactDisc" class="soundsystem4.SgtPeppers"></bean>
+	<!-- 把Javaconfig的配置加载到XML配置中 -->
+	<bean class="soundsystem4.CDConfig"></bean>
+	
+	<!--  -->
+	<import resource="cdplayer-config.xml"/>
+	
+	
+	
+</beans>
